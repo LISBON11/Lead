@@ -7,18 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var leads_1 = require("./leads");
-var phrases = [new leads_1.Leads(1, 'Liza'), new leads_1.Leads(2, 'Liza2'), new leads_1.Leads(3, 'Liza3')];
-var phrasesPromise = Promise.resolve(phrases);
+var leads = [{ id: 1, name: 'liza' }, { id: 2, name: 'liza2' }, { id: 3, name: 'liza3' }];
+var leadsPromise = Promise.resolve(leads);
 var LeadInfoService = (function () {
     function LeadInfoService() {
     }
     LeadInfoService.prototype.getAll = function () {
-        return phrasesPromise;
+        return leadsPromise;
     };
     LeadInfoService.prototype.getPhrase = function (id) {
-        return phrasesPromise
-            .then(function (phrases) { return phrases.find(function (x) { return x.id == id; }); });
+        return leadsPromise
+            .then(function (leads) { return leads.find(function (x) { return x.id == id; }); });
     };
     return LeadInfoService;
 }());
@@ -26,4 +25,14 @@ LeadInfoService = __decorate([
     core_1.Injectable()
 ], LeadInfoService);
 exports.LeadInfoService = LeadInfoService;
+var a = {
+    0: {
+        name: 'liza',
+        id: 0
+    },
+    1: {
+        name: 'liza1',
+        id: 1
+    }
+};
 //# sourceMappingURL=lead-info.service.js.map

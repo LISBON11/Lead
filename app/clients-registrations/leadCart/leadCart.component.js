@@ -12,15 +12,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var lead_info_service_1 = require("../../common/services/lead-info.service");
-var leads_1 = require("../../common/services/leads");
 var LeadCartComponent = (function () {
     function LeadCartComponent(router, activatedRoute, leadInfoService) {
         this.router = router;
         this.activatedRoute = activatedRoute;
         this.leadInfoService = leadInfoService;
-        // NEED ADVICE: Нормальная альтернатива для чтобы не ставить *ngif в разметке?
-        // Воообще кажется что не очень, но как быть? 
-        this.persInfo = new leads_1.Leads(null, null); // <-----
+        // NEED ADVICE: Какая альтернатива для чтобы не ставить *ngif в разметке?  потому что ругается на то что нет свойства у inderfined, т.к. еще ничего туда не присвоили
+        // если в конструктор даже запихнуть получение данных, то тоже жалуецо
+        // этот вариант вообще унылый,  просто так оставила. Может надо использовать не интерфейс, а класс, 
+        // и создавать экземпляр сразу, а в классе задать по умолчанию значения для свойств? 
+        // persInfo: Leads = new Leads();
+        this.persInfo = { id: null, name: '23' }; // <-----
     }
     ;
     LeadCartComponent.prototype.ngOnInit = function () {

@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router"
 
 import { LeadInfoService } from "../../common/services/lead-info.service";
-import { Leads } from "../../common/services/leads";
+import { Leads } from "../../common/interfaces/leads";
 
 
 @Component({

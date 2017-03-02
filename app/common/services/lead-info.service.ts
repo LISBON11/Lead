@@ -1,21 +1,31 @@
 import { Injectable } from "@angular/core";
+import { Leads } from "../interfaces/leads";
 
-import { Leads } from "./leads";
+let leads = [{id:1,name:'liza'},{id:2,name:'liza2'},{id:3,name:'liza3'}];
 
-let phrases = [new Leads(1,'Liza'),new Leads(2,'Liza2'),new Leads(3,'Liza3')];
-
-let phrasesPromise = Promise.resolve(phrases);
+let leadsPromise = Promise.resolve(leads);
 
 @Injectable()
 export class LeadInfoService {
 
     getAll(): Promise<Leads[]> {
-        return phrasesPromise;
+        return leadsPromise;
     }
 
     getPhrase(id: number): Promise<Leads> {
-        return phrasesPromise
-            .then(phrases => phrases.find(x => x.id == id));
+        return leadsPromise
+            .then(leads => leads.find(x => x.id == id));
     }
 }
 
+
+var a = {
+    0: {
+        name: 'liza',
+        id : 0
+    } ,
+    1: {
+        name: 'liza1',
+        id : 1
+    } 
+}

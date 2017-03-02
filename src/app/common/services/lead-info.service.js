@@ -7,7 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var leads = [{ id: 1, name: 'liza' }, { id: 2, name: 'liza2' }, { id: 3, name: 'liza3' }];
+var lead_list_1 = require("../db_files/lead_list");
+var leads = Object.values(lead_list_1.leadList);
 var leadsPromise = Promise.resolve(leads);
 var LeadInfoService = (function () {
     function LeadInfoService() {
@@ -25,14 +26,4 @@ LeadInfoService = __decorate([
     core_1.Injectable()
 ], LeadInfoService);
 exports.LeadInfoService = LeadInfoService;
-var a = {
-    0: {
-        name: 'liza',
-        id: 0
-    },
-    1: {
-        name: 'liza1',
-        id: 1
-    }
-};
 //# sourceMappingURL=lead-info.service.js.map

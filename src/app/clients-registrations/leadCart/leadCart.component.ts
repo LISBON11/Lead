@@ -15,7 +15,7 @@ export class LeadCartComponent implements OnInit {
     // этот вариант вообще унылый,  просто так оставила. Может надо использовать не интерфейс, а класс, 
     // и создавать экземпляр сразу, а в классе задать по умолчанию значения для свойств? 
     // persInfo: Leads = new Leads();
-    persInfo: Leads = { id: null, name:'23'}; // <-----
+    leadInfo: Leads = { id: null, name:'load'}; // <-----
 
     constructor (private router: Router,
         private activatedRoute: ActivatedRoute,
@@ -26,7 +26,7 @@ export class LeadCartComponent implements OnInit {
             let id = +params["id"]; 
             this.leadInfoService
                 .getPhrase(id) 
-                .then(result => this.persInfo = result);
+                .then(result => this.leadInfo = result);
         });
     }
 

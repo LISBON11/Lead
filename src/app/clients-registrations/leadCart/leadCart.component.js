@@ -22,7 +22,7 @@ var LeadCartComponent = (function () {
         // этот вариант вообще унылый,  просто так оставила. Может надо использовать не интерфейс, а класс, 
         // и создавать экземпляр сразу, а в классе задать по умолчанию значения для свойств? 
         // persInfo: Leads = new Leads();
-        this.persInfo = { id: null, name: '23' }; // <-----
+        this.leadInfo = { id: null, name: 'load' }; // <-----
     }
     ;
     LeadCartComponent.prototype.ngOnInit = function () {
@@ -31,7 +31,7 @@ var LeadCartComponent = (function () {
             var id = +params["id"];
             _this.leadInfoService
                 .getPhrase(id)
-                .then(function (result) { return _this.persInfo = result; });
+                .then(function (result) { return _this.leadInfo = result; });
         });
     };
     LeadCartComponent.prototype.goToClientList = function () {

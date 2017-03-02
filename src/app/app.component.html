@@ -1,0 +1,31 @@
+<header class='header'>
+	<div class='header__container clearfix'>
+		<div class='header__user-block user-block'>
+			<img src='{{user_info.img_src}}' alt='User icon' class='user-block__icon'>
+			<div class='user-block__info'>
+				<div>{{user_info.type}}</div>
+				<div>{{user_info.name}}</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<nav class='nav'>
+	<ul class='nav__list nav-list'>
+		<li class='nav-list__item'>
+			<a routerLink="/home" routerLinkActive="nav-list__ref_active" class='nav-list__ref'>
+				<div class='nav-list__icon ti-home'></div>
+				<div class='nav-list__ref-text'>Home</div>
+			</a>
+		</li>
+		<li class='nav-list__item'>
+			<a routerLink="/clients-registrations" routerLinkActive="nav-list__ref_active"  class='nav-list__ref'>
+				<div class='nav-list__icon ti-user'></div>
+				<div class='nav-list__ref-text'>Clents Registrations</div>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+
+<router-outlet></router-outlet>

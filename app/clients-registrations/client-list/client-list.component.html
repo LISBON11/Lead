@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let lead of clientList"
+        (click)="onSelect(lead)">
+        {{lead.id}}
+    </li>
+</ul>

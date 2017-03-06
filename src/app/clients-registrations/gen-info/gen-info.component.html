@@ -1,4 +1,4 @@
-<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user" hidden>
     <label>
         <span>Full name</span>
         <input type="text" placeholder="Your full name" formControlName="name">
@@ -28,3 +28,119 @@
     <button type="submit" [disabled]="user.invalid">Sign up</button>
 </form>
 
+<form novalidate (ngSubmit)="onSubmit(lead)" [formGroup]="lead">
+    <div *ngIf='userInfo' class=''>
+        <div class='col-container clearfix'>
+            <div class='col-container__col col'>
+                <div>{{userInfo.first_name}} {{userInfo.last_name}}</div>
+                <div>Last Login: {{userInfo.last_login}}</div>
+            </div>
+            <div class='col-container__col col'>
+                <div>Client's time: {{userInfo.clients_time}}</div>
+                <div>Next Event: {{userInfo.next_ivent}}</div>
+            </div>
+            <div class='col-container__col col'>
+                <div>1</div>
+                <div>2</div>
+            </div>
+        </div>
+        <div class='col-container mt-20 clearfix'>
+            <div class='col-container__col col'>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>First Name</span>
+                        <input type="text" placeholder="Your email address" formControlName="first_name" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Last Name</span>
+                        <input type="text" placeholder="Your email address" formControlName="last_name" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Email</span>
+                        <input type="text" placeholder="Your email address" formControlName="email" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Mobile Number</span>
+                        <input type="text" placeholder="Your email address" formControlName="mobile_numb" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Phone Number</span>
+                        <input type="text" placeholder="Your email address" formControlName="phone_numb" class='row__text-input'>
+                    </label>
+                </div>
+            </div>
+            <div class='col-container__col col'>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>First Name</span>
+                        <input type="text" placeholder="Your email address" formControlName="first_name" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Last Name</span>
+                        <input type="text" placeholder="Your email address" formControlName="last_name" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Email</span>
+                        <input type="text" placeholder="Your email address" formControlName="email" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Mobile Number</span>
+                        <input type="text" placeholder="Your email address" formControlName="mobile_numb" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Phone Number</span>
+                        <input type="text" placeholder="Your email address" formControlName="phone_numb" class='row__text-input'>
+                    </label>
+                </div>
+            </div>
+            <div class='col-container__col col'>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>First Name</span>
+                        <input type="text" formControlName="first_name" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Last Name</span>
+                        <input type="text" formControlName="last_name" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Email</span>
+                        <input type="text" formControlName="email" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Mobile Number</span>
+                        <input type="text" formControlName="mobile_numb" class='row__text-input'>
+                    </label>
+                </div>
+                <div class='col__row row'>
+                    <label class='row__lable clearfix'>
+                        <span class='row__lable-text'>Phone Number</span>
+                        <input type="text" formControlName="phone_numb" class='row__text-input'>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

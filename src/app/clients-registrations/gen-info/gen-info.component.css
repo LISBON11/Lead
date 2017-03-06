@@ -1,0 +1,33 @@
+.col-container__col {
+    width: 33%;
+    float: left
+}
+
+.row__text-input {
+    float: right;
+    margin-right: 55px;
+    height: 35px;
+    border: #d7d9de 1px solid;
+    padding-left: 10px;
+    width: 40%;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.row__lable {
+    display: block;
+}
+
+.col__row {
+    margin-bottom: 10px;
+}
+
+.row__lable-text {
+    color: #888888;
+    vertical-align: middle;
+    font-weight: 300;
+    padding-top: 10px;
+    float: left;
+}

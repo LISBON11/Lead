@@ -25,7 +25,7 @@ var LeadCartComponent = (function () {
         this.leadInfo = { id: null, name: 'load' }; // <-----
         this.currentRoute = '123';
         this.cartRoutes = {
-            'general': 'General information',
+            'general': 'Clients information',
             'marketing': 'Marketing information',
             'traiding': 'Traiding information'
         };
@@ -33,12 +33,11 @@ var LeadCartComponent = (function () {
     ;
     LeadCartComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var id;
         this.activatedRoute.params.subscribe(function (params) {
-            id = +params["id"];
+            _this.leadId = +params["id"];
         });
         this.leadInfoService
-            .getPhrase(id)
+            .getPhrase(this.leadId)
             .then(function (result) { return _this.leadInfo = result; });
         // NEED HELP: Я тут хочу как бы подписаться на изменение урла,  чтобы в шаблон выводить заголовок в зависимости от вкладки
         // 1) Пробовала сделать через дочерний компонент навигации и сюда передавать даынне по клику,  но там такая фишка получается, что при

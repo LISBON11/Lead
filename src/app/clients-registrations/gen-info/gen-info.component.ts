@@ -7,28 +7,45 @@ import { LeadInfoService } from "../../common/services/lead-info.service";
 @Component({
     moduleId: module.id,
     selector: "general-info",
-    templateUrl: "gen-info.component.html"
+    templateUrl: "gen-info.component.html",
+    styleUrls: ['gen-info.component.css']
 })
 export class GenInfoComponent implements OnInit { 
     user: FormGroup;
+    lead: FormGroup;
     userInfo : {};
 
     constructor(private fb: FormBuilder,
         private leadInfoService: LeadInfoService,
-        private activatedRoute:ActivatedRoute) {};
+        private activatedRoute:ActivatedRoute) {
+            
+            //NEED HELP: как тут вытащить id который был в параметрах предыдущего роута?
+            //сейчас всегда ищу по id=0
+            this.leadInfoService
+            .getPhrase(0) 
+            .then(result => {
+                this.userInfo = result;
+                
+            } );
+        };
 
     ngOnInit() {
-        //NEED HELP: айдишник я уде получала в родительском компоненте,  его лучше передать или еще раз вытащить?
-        let id : number;
+        //NEED HELP:Почему тут выводит underfined? Ведь constructor срабатывает первее чем ngOnInit  и в this.userInfo уже должны быть данные?
+        //или он не ждет пока выполнится конструктор полностью(вааат)
+        console.log(this.userInfo);
+        
 
-        this.activatedRoute.params.subscribe((params: Params) => {
-            id = +params["id"]; 
+        this.lead = this.fb.group({
+            first_name: ['', [Validators.required, Validators.minLength(2)]],
+            last_name: ['', [Validators.required, Validators.minLength(2)]],
+            email: ['', [Validators.required, Validators.minLength(2)]],
+            mobile_numb: ['', [Validators.required, Validators.minLength(2)]],
+            phone_numb: ['', [Validators.required, Validators.minLength(2)]],
+            last_name1: this.fb.group({
+                email: ['', Validators.required],
+                confirm: ['', Validators.required]
+            })
         });
-        //
-
-        this.leadInfoService
-            .getPhrase(id) 
-            .then(result => this.userInfo = result);
 
         this.user = this.fb.group({
             name: ['', [Validators.required, Validators.minLength(2)]],

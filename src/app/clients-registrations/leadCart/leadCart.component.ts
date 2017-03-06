@@ -18,9 +18,9 @@ export class LeadCartComponent implements OnInit {
     // persInfo: Leads = new Leads();
     leadInfo: Leads = { id: null, name:'load'}; // <-----
     currentRoute: String = '123';
-    sub:any;
+    leadId: any;
     cartRoutes: Object = {
-        'general': 'General information',
+        'general': 'Clients information',
         'marketing': 'Marketing information',
         'traiding': 'Traiding information'
     };
@@ -30,14 +30,12 @@ export class LeadCartComponent implements OnInit {
         private leadInfoService: LeadInfoService) {};
 
     ngOnInit() {
-        let id : number;
-
         this.activatedRoute.params.subscribe((params: Params) => {
-            id = +params["id"]; 
+            this.leadId = +params["id"]; 
         });
 
          this.leadInfoService
-                .getPhrase(id) 
+                .getPhrase(this.leadId) 
                 .then(result => this.leadInfo = result);
         
         // NEED HELP: Я тут хочу как бы подписаться на изменение урла,  чтобы в шаблон выводить заголовок в зависимости от вкладки

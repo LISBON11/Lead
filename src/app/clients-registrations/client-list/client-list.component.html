@@ -1,6 +1,25 @@
-<ul>
-    <li *ngFor="let lead of clientList"
-        (click)="onSelect(lead)">
-        {{lead.id}}
-    </li>
-</ul>
+<div class='full-list-container'>
+    <table class='full-list-container__pl-table pl-table'>
+        <caption class='pl-table__caption'>
+            <span class="pl-table__icon ti-marker"></span>
+            Lead List
+        </caption>
+        <thead class='pl-table__thead'>
+            <tr class='pl-table__tr'>
+                <th class='pl-table__cell'>
+                    Account number
+                </th>
+                <th class='pl-table__cell'>
+                    Name
+                </th>
+            </tr>
+        </thead>
+        <tbody class='pl-table__tbody'>
+            <tr *ngFor="let lead of clientList"
+                (click)="onSelect(lead)" class='pl-table__tr'>
+                <td class='pl-table__cell'>{{lead.id}}</td>
+                <td class='pl-table__cell'>{{lead.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -33,7 +33,8 @@ ClientListComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: "client-list",
-        templateUrl: "client-list.component.html"
+        templateUrl: "client-list.component.html",
+        styleUrls: ["client-list.component.css", "../../common/shared-styles/plain-table.css"]
     }),
     __metadata("design:paramtypes", [router_1.Router,
         lead_info_service_1.LeadInfoService])

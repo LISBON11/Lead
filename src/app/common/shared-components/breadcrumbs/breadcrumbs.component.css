@@ -1,0 +1,19 @@
+.breadcr {
+    max-height: 100px;
+    background: #e9edf2;
+    border-bottom: 1px solid #c5c7cc;
+}
+
+.breadcr__container {
+    padding: 25px 15px;
+}
+
+ .breadcr__header {
+    font-size: 28px;
+ }
+
+ .breadcr__sub-header {
+     font-size: 14px;
+     line-height: 20px;
+     color: #888888;
+ }

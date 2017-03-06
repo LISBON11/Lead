@@ -17,7 +17,13 @@ exports.routes = [
     },
     {
         path: "clients-registrations/:id",
-        component: index_1.LeadCartComponent
+        component: index_1.LeadCartComponent,
+        children: [
+            { path: '', redirectTo: 'general', pathMatch: 'full' },
+            { path: 'general', component: index_1.GenInfoComponent },
+            { path: 'marketing', component: index_1.MarketingInfoComponent },
+            { path: 'traiding', component: index_1.TradingInfoComponent }
+        ]
     }
 ];
 //# sourceMappingURL=app.routes.js.map

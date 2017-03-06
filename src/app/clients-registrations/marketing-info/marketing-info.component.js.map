@@ -1,0 +1,1 @@
+{"version":3,"file":"marketing-info.component.js","sourceRoot":"","sources":["marketing-info.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAA0C;AAO1C,IAAa,sBAAsB;IAAnC;IACA,CAAC;IAAD,6BAAC;AAAD,CAAC,AADD,IACC;AADY,sBAAsB;IALlC,gBAAS,CAAC;QACP,QAAQ,EAAE,MAAM,CAAC,EAAE;QACnB,QAAQ,EAAE,gBAAgB;QAC1B,WAAW,EAAE,+BAA+B;KAC/C,CAAC;GACW,sBAAsB,CAClC;AADY,wDAAsB"}

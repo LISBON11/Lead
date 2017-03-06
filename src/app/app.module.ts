@@ -9,7 +9,7 @@ import { routes } from "./app.routes";
 import { ClientsRegistrationsModule } from "./index";
 
 // components
-import { AppComponent, HomeComponent, ClientListComponent } from "./index";
+import { AppComponent, HeaderComponent, HomeComponent, MainNavComponent, BreadcrumbsComponent } from "./index";
 
 @NgModule({
     imports: [
@@ -17,7 +17,13 @@ import { AppComponent, HomeComponent, ClientListComponent } from "./index";
         RouterModule.forRoot(routes),
         ClientsRegistrationsModule
     ],
-    declarations: [AppComponent, HomeComponent],
+    declarations: [
+        AppComponent,
+        HomeComponent, 
+        HeaderComponent,
+        MainNavComponent,
+        BreadcrumbsComponent
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

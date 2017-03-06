@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 
-import { HomeComponent, ClientListComponent, LeadCartComponent } from "./index";
+import { HomeComponent, ClientListComponent, LeadCartComponent, GenInfoComponent, MarketingInfoComponent, TradingInfoComponent } from "./index";
 
 export const routes: Routes = [
     {
@@ -18,6 +18,12 @@ export const routes: Routes = [
     },
     {
         path: "clients-registrations/:id",
-        component: LeadCartComponent
+        component: LeadCartComponent,
+        children: [
+            { path: '', redirectTo: 'general', pathMatch: 'full' },
+            { path: 'general', component: GenInfoComponent },
+            { path: 'marketing', component: MarketingInfoComponent },
+            { path: 'traiding', component: TradingInfoComponent }
+        ]
     }
 ];

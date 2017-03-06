@@ -8,7 +8,8 @@ import { Leads } from "../../common/interfaces/leads";
 @Component({
     moduleId: module.id,
     selector: "client-list",
-    templateUrl: "client-list.component.html"
+    templateUrl: "client-list.component.html",
+    styleUrls: ["client-list.component.css", "../../common/shared-styles/plain-table.css"]
 })
 export class ClientListComponent implements OnInit { 
     clientList : Leads[];

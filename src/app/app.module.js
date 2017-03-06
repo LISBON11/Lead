@@ -27,7 +27,13 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(app_routes_1.routes),
             index_1.ClientsRegistrationsModule
         ],
-        declarations: [index_2.AppComponent, index_2.HomeComponent],
+        declarations: [
+            index_2.AppComponent,
+            index_2.HomeComponent,
+            index_2.HeaderComponent,
+            index_2.MainNavComponent,
+            index_2.BreadcrumbsComponent
+        ],
         bootstrap: [index_2.AppComponent]
     })
 ], AppModule);

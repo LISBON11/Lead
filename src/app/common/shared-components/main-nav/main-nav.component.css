@@ -1,0 +1,36 @@
+.nav {
+    background: #323945;
+}
+
+.nav-list__item {
+    display: inline-block;
+}
+
+.nav-list__ref {
+    padding: 11px 15px;
+    height: 51px;
+    display: block;
+    text-decoration: none;
+    color: #888888;
+    text-align: center;
+
+    transition: all 0.2s;
+ }
+
+ .nav-list__ref:hover {
+    background: #2d313b;
+    color: #25bce9;
+ }
+
+ .nav-list__ref_active {
+    color: #fff;
+    background-color: #25bce9;
+ }
+
+.nav-list__icon {
+    font-size: 18px;
+}
+
+.nav-list__ref-text {
+    margin-top: 11px;
+}

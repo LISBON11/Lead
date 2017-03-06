@@ -1,0 +1,26 @@
+.header__user-block {
+    float: right;
+    padding: 13px;
+    border-left: 1px solid #c5c7cc;
+}
+
+.user-block {
+    height: 40px;
+}
+
+.user-block__icon {
+    float: left
+}
+
+.user-block__info {
+    float: left;
+    margin-left: 15px;
+}
+
+.header__container {
+    padding: 0 15px;
+}
+
+.header {
+    background: white;
+}

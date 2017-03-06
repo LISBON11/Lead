@@ -6,14 +6,14 @@ import { RouterModule } from "@angular/router";
 import { routes } from "./app.routes";
 
 //modules
-import { ClientsRegistrationsModule } from "root_index";
+import { ClientsRegistrationsModule } from "./index";
 
 // components
 import { AppComponent, 
          HeaderComponent, 
          HomeComponent,
          MainNavComponent, 
-         BreadcrumbsComponent } from "root_index";
+         BreadcrumbsComponent } from "./index";
 
 @NgModule({
     imports: [

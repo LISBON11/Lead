@@ -5,7 +5,7 @@ import { HomeComponent,
          LeadCartComponent, 
          GenInfoComponent, 
          MarketingInfoComponent, 
-         TradingInfoComponent } from "root_index";
+         TradingInfoComponent } from "./index";
 
 export const routes: Routes = [
     {

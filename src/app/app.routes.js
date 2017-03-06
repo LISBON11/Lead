@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var root_index_1 = require("root_index");
+var index_1 = require("./index");
 exports.routes = [
     {
         path: "",
@@ -9,34 +9,34 @@ exports.routes = [
     },
     {
         path: "home",
-        component: root_index_1.HomeComponent
+        component: index_1.HomeComponent
     },
     {
         path: "clients-registrations",
-        component: root_index_1.ClientListComponent
+        component: index_1.ClientListComponent
     },
     {
         path: "clients-registrations/:id",
-        component: root_index_1.LeadCartComponent,
+        component: index_1.LeadCartComponent,
         children: [
             { path: '', redirectTo: 'general', pathMatch: 'full' },
             {
                 path: 'general',
-                component: root_index_1.GenInfoComponent,
+                component: index_1.GenInfoComponent,
                 data: {
                     headerText: 'General information'
                 }
             },
             {
                 path: 'marketing',
-                component: root_index_1.MarketingInfoComponent,
+                component: index_1.MarketingInfoComponent,
                 data: {
                     titheaderTextle: 'Marketing information'
                 }
             },
             {
                 path: 'traiding',
-                component: root_index_1.TradingInfoComponent,
+                component: index_1.TradingInfoComponent,
                 data: {
                     headerText: 'Traiding information'
                 }

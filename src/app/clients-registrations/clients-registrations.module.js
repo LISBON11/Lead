@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_1 = require("@angular/router");
+var forms_1 = require("@angular/forms");
 var index_1 = require("./index");
 // NEED ADVICE: Вот тут вот хотеолось бы обращаться по такому "../index"  урлу? т.е. из корневого индекса, я вроде собрала сервис в этот файл, но выдает ошибку
 // Invalid provider for the NgModule 'ClientsRegistrationsModule' - only instances of Provider and Type are allowed
@@ -21,7 +22,11 @@ var ClientsRegistrationsModule = (function () {
 }());
 ClientsRegistrationsModule = __decorate([
     core_1.NgModule({
-        imports: [common_1.CommonModule, router_1.RouterModule],
+        imports: [
+            common_1.CommonModule,
+            router_1.RouterModule,
+            forms_1.ReactiveFormsModule
+        ],
         declarations: [
             index_1.ClientListComponent,
             index_1.LeadCartComponent,

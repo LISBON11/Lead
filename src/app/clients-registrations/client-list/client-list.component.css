@@ -1,6 +1,8 @@
-.full-list-container__pl-table { 
-    margin-top: 50px;
-    margin-left: 50px;
+.pl-table-wrapper_full-list { 
+    margin: 50px;
 }
 
-
+/* временные стили, для лаконичности отображения */
+.pl-table-wrapper  {
+    width: 500px;
+}

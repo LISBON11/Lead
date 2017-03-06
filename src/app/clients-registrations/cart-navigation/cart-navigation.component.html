@@ -1,26 +1,28 @@
-<div class=''>
-    <table class='pl-table pl-table_l-side'>
-        <caption class='pl-table__caption'>
-            <span class="pl-table__icon ti-marker"></span>
-            Lead Info
-        </caption>
-        <tbody class='pl-table__tbody'>
-            <tr class='pl-table__tr'>
-                <td class='pl-table__cell'>
-					<a [routerLink]="['general']" class='pl-table__ref pl-table__ref_l-side'>General Info</a>
-				</td>
-            </tr>
+<div class='pl-table-wrapper pl-table-wrapper_l-side'>
+    <div class='pl-table-wrapper__header'>
+        <span class="pl-table__icon ti-marker"></span>
+		Lead Info
+    </div>
+	<table class='pl-table-wrapper__pl-table pl-table'>
+		<tbody class='pl-table__tbody'>
 			<tr class='pl-table__tr'>
-                <td class='pl-table__cell'>
-					<a [routerLink]="['marketing']"
+				<td class='pl-table__cell'>
+					<a [routerLink]="['general']" routerLinkActive='pl-table__ref_active'
+						class='pl-table__ref pl-table__ref_l-side'>General Info</a>
+				</td>
+			</tr>
+			<tr class='pl-table__tr'>
+				<td class='pl-table__cell'>
+					<a [routerLink]="['marketing']" routerLinkActive='pl-table__ref_active'
 						class='pl-table__ref pl-table__ref_l-side'>Marketing Info</a>
 				</td>
-            </tr>
+			</tr>
 			<tr class='pl-table__tr'>
-                <td class='pl-table__cell'>
-					<a [routerLink]="['traiding']" class='pl-table__ref pl-table__ref_l-side'>Traiding Info</a>
+				<td class='pl-table__cell'>
+					<a [routerLink]="['traiding']" routerLinkActive='pl-table__ref_active'
+						class='pl-table__ref pl-table__ref_l-side'>Traiding Info</a>
 				</td>
-            </tr>
-        </tbody>
-    </table>
+			</tr>
+		</tbody>
+	</table>
 </div>

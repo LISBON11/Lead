@@ -1,10 +1,9 @@
 .pl-table {
-    background: white;
-    box-shadow: rgba(0, 0, 0, 0.298039) 0px 4px 12px -5px;
     border-collapse: collapse;
+    width: 100%;
 }
 
- .pl-table__caption {
+.pl-table-wrapper__header {
     background: #e9edf2;
     text-align: left;
     color: #444444;
@@ -13,6 +12,11 @@
     border-bottom: 1px solid #d7d9de;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+ }
+
+ .pl-table-wrapper {
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 4px 12px -5px;
  }
 
  .pl-table__cell {
@@ -32,3 +36,10 @@
     background-color: #f0f2ef;
     cursor: pointer;    
  }
+
+ .pl-table__ref {
+    display: block;
+    padding: 7px 15px;
+    text-decoration: none;
+    color: #888888;
+}

@@ -23,6 +23,11 @@ var LeadCartComponent = (function () {
         // и создавать экземпляр сразу, а в классе задать по умолчанию значения для свойств? 
         // persInfo: Leads = new Leads();
         this.leadInfo = { id: null, name: 'load' }; // <-----
+        this.cartRoutes = {
+            'general': 'General information',
+            'marketing': 'Marketing information',
+            'traiding': 'Traiding information'
+        };
     }
     ;
     LeadCartComponent.prototype.ngOnInit = function () {
@@ -32,18 +37,24 @@ var LeadCartComponent = (function () {
             _this.leadInfoService
                 .getPhrase(id)
                 .then(function (result) { return _this.leadInfo = result; });
+            _this.currentRoute = '12';
         });
+        var last_segment = this.router.url.split('/').slice(-1)[0];
+        this.currentRoute = this.cartRoutes[last_segment];
     };
+    ;
     LeadCartComponent.prototype.goToClientList = function () {
         this.router.navigate(["clients-registrations"]);
     };
+    ;
     return LeadCartComponent;
 }());
 LeadCartComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: "leadCart",
-        templateUrl: "leadCart.component.html"
+        templateUrl: "leadCart.component.html",
+        styleUrls: ['leadCart.component.css', "../../common/shared-styles/plain-table.css"]
     }),
     __metadata("design:paramtypes", [router_1.Router,
         router_1.ActivatedRoute,

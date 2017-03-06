@@ -2,20 +2,11 @@
     padding: 0;
 }
 
-.pl-table__ref {
-    display: block;
-    padding: 7px 15px;
-    text-decoration: none;
-}
-
-.pl-table_l-side {
+.pl-table-wrapper_l-side {
     min-width: 300px;
-}
-
-.pl-table__ref_l-side:visited {
-    color: #888888;
+    position: absolute;
 }
 
 .pl-table__ref_active {
-    color: red;
+    color: #25bce9;
 }

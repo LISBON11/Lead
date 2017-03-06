@@ -1,6 +1,17 @@
-<cart-nav></cart-nav>
+<div class='content-wrapper'>
+	<cart-nav></cart-nav>
 
-<router-outlet></router-outlet>
+	<div class='pl-table-wrapper content-wrapper__pl-table-wrapper'>
+		<div class='pl-table-wrapper__header'>
+			<span class="ti-marker"></span>
+			{{currentRoute}}
+		</div>
+		<div class='content-wrapper__main-content'>
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>
+
 
 <button (click)="goToClientList()">Go Back</button>
 <div>

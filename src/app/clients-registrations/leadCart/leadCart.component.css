@@ -1,0 +1,11 @@
+.content-wrapper {
+    margin: 50px 15px;
+}
+
+.content-wrapper__pl-table-wrapper {
+    margin-left: 315px;
+}
+
+.content-wrapper__main-content {
+    padding: 10px;
+}

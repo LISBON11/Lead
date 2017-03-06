@@ -9,7 +9,11 @@ import { routes } from "./app.routes";
 import { ClientsRegistrationsModule } from "root_index";
 
 // components
-import { AppComponent, HeaderComponent, HomeComponent, MainNavComponent, BreadcrumbsComponent } from "root_index";
+import { AppComponent, 
+         HeaderComponent, 
+         HomeComponent,
+         MainNavComponent, 
+         BreadcrumbsComponent } from "root_index";
 
 @NgModule({
     imports: [

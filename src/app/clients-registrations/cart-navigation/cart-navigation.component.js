@@ -10,11 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var CartNavComponent = (function () {
-    function CartNavComponent() {
+    function CartNavComponent(router, activatedRoute) {
+        this.router = router;
+        this.activatedRoute = activatedRoute;
+        this.cartRoutes = {
+            'general': 'General information',
+            'marketing': 'Marketing information',
+            'traiding': 'Traiding information'
+        };
     }
+    CartNavComponent.prototype.routeSplit = function () {
+        var last_segment = this.router.url.split('/').slice(-1)[0];
+        this.currentRoute = this.cartRoutes[last_segment];
+        console.log(this.currentRoute);
+    };
     return CartNavComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], CartNavComponent.prototype, "currentRoute", void 0);
 CartNavComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
@@ -22,7 +39,8 @@ CartNavComponent = __decorate([
         templateUrl: "cart-navigation.component.html",
         styleUrls: ['../../common/shared-styles/plain-table.css', 'cart-navigation.component.css']
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [router_1.Router,
+        router_1.ActivatedRoute])
 ], CartNavComponent);
 exports.CartNavComponent = CartNavComponent;
 //# sourceMappingURL=cart-navigation.component.js.map

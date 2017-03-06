@@ -17,37 +17,25 @@ export class LeadCartComponent implements OnInit {
     // и создавать экземпляр сразу, а в классе задать по умолчанию значения для свойств? 
     // persInfo: Leads = new Leads();
     leadInfo: Leads = { id: null, name:'load'}; // <-----
-    cartRoutes: Object = {
-        'general': 'General information',
-        'marketing': 'Marketing information',
-        'traiding': 'Traiding information'
-    };
-    currentRoute: String;
-    temp: any;
+    currentRoute: String = '123';
 
     constructor (private router: Router,
         private activatedRoute: ActivatedRoute,
-        private leadInfoService: LeadInfoService) {
-            
-        };
+        private leadInfoService: LeadInfoService) {};
 
     ngOnInit() {
-        this.activatedRoute.params.forEach((params: Params) => {
-            let id = +params["id"]; 
-            this.leadInfoService
-                .getPhrase(id) 
-                .then(result => this.leadInfo = result);
-            
-            this.currentRoute = '12';
+        let id : number;
+
+        this.activatedRoute.params.subscribe((params: Params) => {
+            id = +params["id"]; 
         });
 
-        let last_segment = this.router.url.split('/').slice(-1)[0];
-        this.currentRoute = this.cartRoutes[last_segment];
+         this.leadInfoService
+                .getPhrase(id) 
+                .then(result => this.leadInfo = result);
     };
 
     goToClientList() {
         this.router.navigate(["clients-registrations"]);
     };
-
-
  }

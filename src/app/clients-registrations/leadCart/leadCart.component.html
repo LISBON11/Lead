@@ -1,5 +1,5 @@
 <div class='content-wrapper'>
-	<cart-nav [currentRoute]="currentRoute"></cart-nav>
+	<cart-nav></cart-nav>
 
 	<div class='pl-table-wrapper content-wrapper__pl-table-wrapper'>
 		<div class='pl-table-wrapper__header'>
@@ -7,11 +7,10 @@
 			{{currentRoute}}
 		</div>
 		<div class='content-wrapper__main-content'>
-			<router-outlet></router-outlet>
+			<router-outlet (onChanged)="onChanged($event)"></router-outlet>
 		</div>
 	</div>
 </div>
-
 
 <button (click)="goToClientList()">Go Back</button>
 <div>

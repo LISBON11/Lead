@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component} from "@angular/core";
 
 @Component({
     moduleId: module.id,
@@ -6,4 +6,7 @@ import { Component } from "@angular/core";
     templateUrl: "gen-info.component.html"
 })
 export class GenInfoComponent { 
+
+    constructor(){};
+
 }

@@ -24,6 +24,11 @@ var LeadCartComponent = (function () {
         // persInfo: Leads = new Leads();
         this.leadInfo = { id: null, name: 'load' }; // <-----
         this.currentRoute = '123';
+        this.cartRoutes = {
+            'general': 'General information',
+            'marketing': 'Marketing information',
+            'traiding': 'Traiding information'
+        };
     }
     ;
     LeadCartComponent.prototype.ngOnInit = function () {
@@ -35,6 +40,30 @@ var LeadCartComponent = (function () {
         this.leadInfoService
             .getPhrase(id)
             .then(function (result) { return _this.leadInfo = result; });
+        // NEED HELP: Я тут хочу как бы подписаться на изменение урла,  чтобы в шаблон выводить заголовок в зависимости от вкладки
+        // 1) Пробовала сделать через дочерний компонент навигации и сюда передавать даынне по клику,  но там такая фишка получается, что при
+        // клике он читает текущий урл, получает значение текущего сегмента, потом делает редирект (на другой урл)  и значение что я получила как бы не актульно 
+        // и отстает на 1 клик,  может можно как то поставить обработчик после смены урла? Или как вообще лучше это реализовать
+        // 2) **- нормальный способ получить последний сегмент или есть более лаконичный вроде location
+        // 3) я еще пробовала способ через  output,  в дочернем компоненте прописываю
+        // @Output header = new EventEmitter<string>();
+        // ngOnInit() {
+        //   this.route
+        //   .data
+        //   .subscribe(subInfo => {
+        //        this.headerText = subInfo['headerText'];  -чтобы читать инфу из роутов, так же вроде красивее чем объект с соответсвием в компоненте
+        //
+        //        this.header.emit(this.headerText)
+        //   });
+        //}
+        // но через что из свзявать? Если вешаю на router-outlet,  то в разметке он пустой и скорее как метка для подргрузки компонента и получается,
+        // что переменные не свзяываются
+        this.router.events.subscribe(function (event) {
+            if (event instanceof router_1.NavigationEnd) {
+                var last_segment = _this.router.url.split('/').slice(-1)[0];
+                _this.currentRoute = _this.cartRoutes[last_segment];
+            }
+        });
     };
     ;
     LeadCartComponent.prototype.goToClientList = function () {

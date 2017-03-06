@@ -26,9 +26,27 @@ export const routes: Routes = [
         component: LeadCartComponent,
         children: [
             { path: '', redirectTo: 'general', pathMatch: 'full' },
-            { path: 'general', component: GenInfoComponent },
-            { path: 'marketing', component: MarketingInfoComponent },
-            { path: 'traiding', component: TradingInfoComponent }
+            { 
+                path: 'general',
+                component: GenInfoComponent,
+                data: {
+                    headerText: 'General information'
+                } 
+            },
+            { 
+                path: 'marketing', 
+                component: MarketingInfoComponent,
+                data: {
+                    titheaderTextle: 'Marketing information'
+                } 
+            },
+            { 
+                path: 'traiding', 
+                component: TradingInfoComponent,
+                data: {
+                    headerText: 'Traiding information'
+                }  
+            }
         ]
     }
 ];

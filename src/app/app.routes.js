@@ -20,9 +20,27 @@ exports.routes = [
         component: root_index_1.LeadCartComponent,
         children: [
             { path: '', redirectTo: 'general', pathMatch: 'full' },
-            { path: 'general', component: root_index_1.GenInfoComponent },
-            { path: 'marketing', component: root_index_1.MarketingInfoComponent },
-            { path: 'traiding', component: root_index_1.TradingInfoComponent }
+            {
+                path: 'general',
+                component: root_index_1.GenInfoComponent,
+                data: {
+                    headerText: 'General information'
+                }
+            },
+            {
+                path: 'marketing',
+                component: root_index_1.MarketingInfoComponent,
+                data: {
+                    titheaderTextle: 'Marketing information'
+                }
+            },
+            {
+                path: 'traiding',
+                component: root_index_1.TradingInfoComponent,
+                data: {
+                    headerText: 'Traiding information'
+                }
+            }
         ]
     }
 ];

@@ -2,4 +2,5 @@ initial data
 .idea
 node_modules
 npm-debug.log
-db.json
+db.jsonnp
+typings

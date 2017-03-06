@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
 
-import { HomeComponent, ClientListComponent, LeadCartComponent, GenInfoComponent, MarketingInfoComponent, TradingInfoComponent } from "./index";
+import { HomeComponent, ClientListComponent, LeadCartComponent, GenInfoComponent, MarketingInfoComponent, TradingInfoComponent } from "root_index";
 
 export const routes: Routes = [
     {

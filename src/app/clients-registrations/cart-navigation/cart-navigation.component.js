@@ -19,7 +19,8 @@ CartNavComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: "cart-nav",
-        templateUrl: "cart-navigation.component.html"
+        templateUrl: "cart-navigation.component.html",
+        styleUrls: ['../../common/shared-styles/plain-table.css', 'cart-navigation.component.css']
     }),
     __metadata("design:paramtypes", [])
 ], CartNavComponent);

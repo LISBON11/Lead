@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component } from "@angular/core";
 
 
 @Component({
     moduleId: module.id,
     selector: "cart-nav",
-    templateUrl: "cart-navigation.component.html"
+    templateUrl: "cart-navigation.component.html",
+    styleUrls: ['../../common/shared-styles/plain-table.css','cart-navigation.component.css']
 })
 export class CartNavComponent { 
     constructor() {}

@@ -12,9 +12,9 @@ var router_1 = require("@angular/router");
 //routes
 var app_routes_1 = require("./app.routes");
 //modules
-var index_1 = require("./index");
+var root_index_1 = require("root_index");
 // components
-var index_2 = require("./index");
+var root_index_2 = require("root_index");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,16 +25,16 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(app_routes_1.routes),
-            index_1.ClientsRegistrationsModule
+            root_index_1.ClientsRegistrationsModule
         ],
         declarations: [
-            index_2.AppComponent,
-            index_2.HomeComponent,
-            index_2.HeaderComponent,
-            index_2.MainNavComponent,
-            index_2.BreadcrumbsComponent
+            root_index_2.AppComponent,
+            root_index_2.HomeComponent,
+            root_index_2.HeaderComponent,
+            root_index_2.MainNavComponent,
+            root_index_2.BreadcrumbsComponent
         ],
-        bootstrap: [index_2.AppComponent]
+        bootstrap: [root_index_2.AppComponent]
     })
 ], AppModule);
 exports.AppModule = AppModule;

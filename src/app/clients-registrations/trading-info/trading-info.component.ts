@@ -6,4 +6,5 @@ import { Component } from "@angular/core";
     templateUrl: "trading-info.component.html"
 })
 export class TradingInfoComponent { 
+    
 }

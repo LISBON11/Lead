@@ -1,5 +1,26 @@
-<nav>
-	<a [routerLink]="['general']">General Info</a>
-	<a [routerLink]="['marketing']">Marketing Info</a>
-    <a [routerLink]="['traiding']">Traiding Info</a>
-</nav>
+<div class=''>
+    <table class='pl-table pl-table_l-side'>
+        <caption class='pl-table__caption'>
+            <span class="pl-table__icon ti-marker"></span>
+            Lead Info
+        </caption>
+        <tbody class='pl-table__tbody'>
+            <tr class='pl-table__tr'>
+                <td class='pl-table__cell'>
+					<a [routerLink]="['general']" class='pl-table__ref pl-table__ref_l-side'>General Info</a>
+				</td>
+            </tr>
+			<tr class='pl-table__tr'>
+                <td class='pl-table__cell'>
+					<a [routerLink]="['marketing']"
+						class='pl-table__ref pl-table__ref_l-side'>Marketing Info</a>
+				</td>
+            </tr>
+			<tr class='pl-table__tr'>
+                <td class='pl-table__cell'>
+					<a [routerLink]="['traiding']" class='pl-table__ref pl-table__ref_l-side'>Traiding Info</a>
+				</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

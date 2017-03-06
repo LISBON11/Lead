@@ -6,10 +6,10 @@ import { RouterModule } from "@angular/router";
 import { routes } from "./app.routes";
 
 //modules
-import { ClientsRegistrationsModule } from "./index";
+import { ClientsRegistrationsModule } from "root_index";
 
 // components
-import { AppComponent, HeaderComponent, HomeComponent, MainNavComponent, BreadcrumbsComponent } from "./index";
+import { AppComponent, HeaderComponent, HomeComponent, MainNavComponent, BreadcrumbsComponent } from "root_index";
 
 @NgModule({
     imports: [

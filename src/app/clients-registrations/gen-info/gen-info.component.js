@@ -19,30 +19,24 @@ var GenInfoComponent = (function () {
         this.fb = fb;
         this.leadInfoService = leadInfoService;
         this.activatedRoute = activatedRoute;
-        //NEED HELP: как тут вытащить id который был в параметрах предыдущего роута?
-        //сейчас всегда ищу по id=0
-        this.leadInfoService
+        this.leadInfoService //получаю данные
             .getPhrase(0)
             .then(function (result) {
             _this.userInfo = result;
+        })
+            .then(function () {
+            _this.lead = _this.fb.group({
+                first_name: [_this.userInfo['first_name'], [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
+                last_name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
+                email: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
+                mobile_numb: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
+                phone_numb: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]]
+            });
         });
     }
     ;
     GenInfoComponent.prototype.ngOnInit = function () {
-        //NEED HELP:Почему тут выводит underfined? Ведь constructor срабатывает первее чем ngOnInit  и в this.userInfo уже должны быть данные?
-        //или он не ждет пока выполнится конструктор полностью(вааат)
-        console.log(this.userInfo);
-        this.lead = this.fb.group({
-            first_name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
-            last_name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
-            email: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
-            mobile_numb: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
-            phone_numb: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
-            last_name1: this.fb.group({
-                email: ['', forms_1.Validators.required],
-                confirm: ['', forms_1.Validators.required]
-            })
-        });
+        console.log(this.activatedRoute.snapshot.data);
         this.user = this.fb.group({
             name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(2)]],
             account: this.fb.group({

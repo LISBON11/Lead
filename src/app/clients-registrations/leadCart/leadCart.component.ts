@@ -33,7 +33,7 @@ export class LeadCartComponent implements OnInit {
         this.activatedRoute.params.subscribe((params: Params) => {
             this.leadId = +params["id"]; 
         });
-
+        
          this.leadInfoService
                 .getPhrase(this.leadId) 
                 .then(result => this.leadInfo = result);

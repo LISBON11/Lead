@@ -28,7 +28,7 @@
     <button type="submit" [disabled]="user.invalid">Sign up</button>
 </form>
 
-<form novalidate (ngSubmit)="onSubmit(lead)" [formGroup]="lead">
+<form novalidate (ngSubmit)="onSubmit(lead)" [formGroup]="lead" *ngIf='userInfo'>
     <div *ngIf='userInfo' class=''>
         <div class='col-container clearfix'>
             <div class='col-container__col col'>
@@ -49,7 +49,7 @@
                 <div class='col__row row'>
                     <label class='row__lable clearfix'>
                         <span class='row__lable-text'>First Name</span>
-                        <input type="text" placeholder="Your email address" formControlName="first_name" class='row__text-input'>
+                        <input type="text" placeholder="Your First Name" formControlName="first_name" class='row__text-input'>
                     </label>
                 </div>
                 <div class='col__row row'>
